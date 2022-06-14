@@ -49,9 +49,14 @@ header {
 }
 
 .cart {margin-right: 1rem;}
+@media (max-width:600px) {
+  .navbar-left-text-container{display:none}
+  #home-link{font-size: small;}
+}
 
-.main-container {padding: 0.5rem;}
+.main-container {}
 .banner-container {
+  margin: 0.5rem;
   height: 40vh;
   background-color: rgb(219, 207, 207);
 
@@ -59,6 +64,9 @@ header {
   justify-content: center; 
   border-radius: 1rem;
 }
+
+.banner-image-container-mobile {display:none}
+.mobile-banner{width:100%}
 
 .banner-details-container {
   display: flex;
@@ -86,13 +94,14 @@ header {
 }
 
 @media (max-width: 900px) {
-  .banner-image{width:200px}
-  body{background-color: green;}
+  .banner-container{display:none; margin:0rem}
+  .banner-image-container-mobile{display:block}
 }
 
 /* Styles regarding each individual shoe card */
 .products-container, .products-category-container
 {
+  margin:0.5rem;
   display: grid; 
   grid-template-columns: repeat(4, 1fr);
 
@@ -137,7 +146,7 @@ header {
 }
 
 @media (max-width: 750px) {
-  .products-container, .products-category-container {grid-template-columns: repeat(2, 1fr); column-gap: 0.5rem;}
+  .products-container, .products-category-container {grid-template-columns: repeat(2, 1fr); column-gap: 0.5rem; margin:0rem;}
   .product-card {padding: 0.5rem}
   
   
@@ -272,6 +281,7 @@ header {
   .product-info-container {
     gap: 1rem;
     width: 100%;
+    margin: 0.5rem;
   }
   .product-image {
     width: 300px; 
@@ -290,6 +300,7 @@ header {
 @media (max-width: 600px) {
   .product-info-container {
     flex-direction: column;
+    margin: 0.5rem;
     margin-top: 0;
   }
 
@@ -477,7 +488,7 @@ header {
 }
 
 .category-nav {
-  min-width: 200px;
+  /* min-width: 200px; */
   display: flex;
   flex-direction: column;
   padding: 0.5rem;
@@ -510,6 +521,20 @@ header {
   background-color: rgb(170, 170, 170);
 }
 
+@media (max-width: 1020px) {
+  .category-container {grid-template-columns: 150px 1fr; }
+  .products-container {grid-template-columns: 1fr 1fr;}
+}
+
+@media (max-width: 600px) {
+  .category-container {
+    display:flex;
+    flex-direction: column;
+  }
+
+  .category-nav{height: 20%;}
+  #category-header{margin-bottom: 1rem;}
+}
 
 
 

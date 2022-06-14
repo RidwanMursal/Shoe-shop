@@ -1,5 +1,6 @@
 import Link from "next/link"
 const DEFAULT_IMAGE_LINK = "https://i.imgur.com/Cn7Wtcx.png"
+import capitalize from "../helper_files"
 
 
 const Product = ({product}) => {
@@ -16,7 +17,7 @@ const Product = ({product}) => {
 
           <div className="product-information">
               <h3>{productName}</h3>
-              <p>{productType}</p>
+              <p>{capitalize(productType)} Shoes</p>
           </div>
 
           <h4>${productPrice}</h4>

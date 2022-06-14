@@ -1,4 +1,5 @@
 const DEFAULT_IMAGE_LINK = "https://i.imgur.com/Cn7Wtcx.png"
+import capitalize from "../../helper_files"
 import {AiFillMinusCircle, AiFillPlusCircle} from "react-icons/ai"
 import {useState} from "react"
 
@@ -24,7 +25,7 @@ const productInfo = ({product}) => {
         </div>
 
         <div className="product-description">
-            <h3 className="company-name">{productBrand}</h3>
+            <h3 className="company-name">{capitalize(productBrand)}</h3>
             <h1 className="sneaker-name">{productName}</h1>
             <p className="product-blurb">{productDetails}</p>
             <h3 className="product-price">${productPrice}</h3>

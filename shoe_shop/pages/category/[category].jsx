@@ -1,4 +1,5 @@
 import Products from "../../components/Products"
+import capitalize from "../../helper_files"
 import { useState, useEffect } from "react"
 import {BsCheckAll} from "react-icons/bs"
 import {GiRunningShoe, GiConverseShoe, GiBasketballBall} from "react-icons/gi"
@@ -32,7 +33,7 @@ const category = ({products, category}) => {
   return (
     <>
       
-      <h2 id="category-header">{category} {typeState} Shoes</h2>
+      <h2 id="category-header">{capitalize(category) + " " + typeState} shoes</h2>
       <div className="category-container">
         <div className="category-nav">
         <button onClick={(e) => shoeTypeQuery(e,setPState,setTypeState,category)} data-shoetype="all" className={typeState===""? "category-nav-button highlighted":"category-nav-button"}><BsCheckAll /> All Shoes</button>
