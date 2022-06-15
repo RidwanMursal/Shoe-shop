@@ -4,14 +4,17 @@ const Products = ({products}) => {
 
   if (products.length === 0) {
     return (
-      <h3>Nothing Found</h3>
+      <div className="nothing-found-container">
+        <h1>No Results Found</h1>
+      </div>
+      
     )
   }
   
   return (
-    <>
+    <div className="products-container">
       {products.map(product => <Product key={product.id} product={product}/>)}
-    </>
+    </div>
   )
 }
 

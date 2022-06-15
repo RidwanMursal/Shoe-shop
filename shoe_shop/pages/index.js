@@ -11,14 +11,8 @@ export default function Home({products}) {
     <div className="main-container">
 
       <Banner />
-      <div className="products-container">
-        <Products products={products} /> 
-      </div>
-      
-
-      {/* footer banner */}
-      
-     
+      <Products products={products} /> 
+ 
     </div>
   )
 }

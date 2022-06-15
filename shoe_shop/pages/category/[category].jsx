@@ -23,7 +23,7 @@ const category = ({products, category}) => {
   const [typeState, setTypeState] = useState("")
   //console.log("this is the state variable", products)
 
-  //Using use effect to get past the next.js stale reference bug with dynamic routes
+  // Using use effect to get past the next.js stale reference bug with dynamic routes
   useEffect(() => {
     setPState(products)
     setTypeState("")
@@ -42,9 +42,9 @@ const category = ({products, category}) => {
           <button onClick={(e) => shoeTypeQuery(e,setPState,setTypeState,category)} data-shoetype="casual" className={typeState==="casual"? "category-nav-button highlighted":"category-nav-button"}><GiConverseShoe/> Casual Shoes</button>
         </div>
     
-        <div className="products-container">
-          <Products products={pState} /> 
-        </div>
+       
+        <Products products={pState} /> 
+        
       </div>
     </>
   

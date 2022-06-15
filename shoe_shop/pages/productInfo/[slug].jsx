@@ -1,4 +1,6 @@
 const DEFAULT_IMAGE_LINK = "https://i.imgur.com/Cn7Wtcx.png"
+
+import Options from "../../components/Options"
 import capitalize from "../../helper_files"
 import {AiFillMinusCircle, AiFillPlusCircle} from "react-icons/ai"
 import {useState} from "react"
@@ -7,6 +9,7 @@ import {useState} from "react"
 
 const productInfo = ({product}) => {
   // console.log(product)
+  let sizes = []; for (let i = 3; i < 16; i++) sizes.push(i)
   const [index, setIndex] = useState(0)
   const [size, setSize] = useState(9)
   const [quantity, setQuantity] = useState(1)
@@ -38,22 +41,9 @@ const productInfo = ({product}) => {
                   <p className="qty">{quantity}</p>
                   <button className="picker-button" onClick={() => setQuantity(quantity + 1)}><AiFillPlusCircle/></button>
                 </div>
-                 {/* def refractor this into another component */}
                 
                 <select name="sizes" id="" defaultValue="9"onChange={(e) => setSize(e.target.selectedOptions.item(0).value)}>
-                  <option value="3">Size: 3</option>
-                  <option value="4">Size: 4</option>
-                  <option value="5">Size: 5</option>
-                  <option value="6">Size: 6</option>
-                  <option value="7">Size: 7</option>
-                  <option value="8">Size: 8</option>
-                  <option value="9">Size: 9</option>
-                  <option value="10">Size: 10</option>
-                  <option value="11">Size: 11</option>
-                  <option value="12">Size: 12</option>
-                  <option value="13">Size: 13</option>
-                  <option value="14">Size: 14</option>
-                  <option value="15">Size: 15</option>
+                  <Options values={sizes} />
                 </select>
               </div>
 
