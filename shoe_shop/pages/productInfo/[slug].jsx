@@ -4,21 +4,36 @@ import Options from "../../components/Options"
 import capitalize from "../../helper_files"
 import {AiFillMinusCircle, AiFillPlusCircle} from "react-icons/ai"
 import {useState} from "react"
+import { useStateContext } from "../../context/stateContext"
 
 
 
 const productInfo = ({product}) => {
+  const {cartItems, setCartItems, addCartItem} = useStateContext()
+  console.log(cartItems)
+  
   // console.log(product)
   let sizes = []; for (let i = 3; i < 16; i++) sizes.push(i)
   const [index, setIndex] = useState(0)
   const [size, setSize] = useState(9)
   const [quantity, setQuantity] = useState(1)
-  const decrementQty = () => {if(quantity > 0) setQuantity(quantity-1);}
+  const decrementQty = () => {if(quantity > 1) setQuantity(quantity-1);}
   const {productImages, productPrice, productDetails, productBrand, productName} = product
-  console.log("index is:", index)
-  console.log(productImages)
+  //console.log("index is:", index)
+  //console.log(productImages)
+  // add to cart function 
+  const addToCart = (product, size, quantity) => {
+    const cartEntry = {
+      product, 
+      size, 
+      quantity,
+    }  
+    addCartItem(cartItems, setCartItems, cartEntry)
+  } 
+
   return (
     <div className="product-container">
+      CART ITEMS ARE {cartItems.length}
       <div className="product-info-container">
         <div className="product-info-images">
           <img src={productImages[index] !== "" ? productImages[index]:DEFAULT_IMAGE_LINK} alt="" className="product-image" onError={(e) => e.target.src=DEFAULT_IMAGE_LINK}/>
@@ -47,7 +62,7 @@ const productInfo = ({product}) => {
                 </select>
               </div>
 
-              <button className="add-to-cart-btn">Add to Cart</button>
+              <button className="add-to-cart-btn" onClick={() => addToCart(product, size, quantity)}>Add to Cart</button>
             </div>
         </div>
       </div>
