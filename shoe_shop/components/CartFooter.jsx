@@ -4,7 +4,7 @@ const CartFooter = ({cartItems}) => {
   let subtotal = 0 
   cartItems.forEach(item => subtotal += (item.product.productPrice*item.quantity))
   return (
-    <>
+    <div>
         <div className="subtotal-container" >
             <h5>Subtotal:</h5>
             <h5>${Math.round(subtotal*100)/100}</h5>
@@ -15,7 +15,7 @@ const CartFooter = ({cartItems}) => {
         </div>
         
         
-    </>
+    </div>
   )
 }
 

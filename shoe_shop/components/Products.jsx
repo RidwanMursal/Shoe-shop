@@ -1,6 +1,6 @@
 import Product from "./Product"
 const Products = ({products}) => {
-  //console.log("this is x", products)
+  
 
   if (products.length === 0) {
     return (

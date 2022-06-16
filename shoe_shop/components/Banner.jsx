@@ -1,6 +1,7 @@
 import shoeImageTopView from "../images/air-force-ones.png"
 import shoeImageProfile from "../images/air-force-ones-profile.png"
 import mobileBanner from "../images/nike.jpg"
+import Link from "next/link"
 
 
 
@@ -20,7 +21,9 @@ const Banner = () => {
 
             <div>
               <h2 className="banner-item-price">$79.99</h2>
-              <button className="banner-shop-button">Shop Now</button>
+              <Link href="/productInfo/nike-af1-new">
+                <button className="banner-shop-button">Shop Now</button>
+              </Link>
             </div>
           </div>
           <img className="banner-image"src={shoeImageTopView.src} alt="oh no" />
