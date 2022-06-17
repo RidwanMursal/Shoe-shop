@@ -44,7 +44,7 @@ const checkInput = async (input) => {
 }
 
 
-const productEntry = () => {
+const ProductEntry = () => {
   const [formInput, setFormInput] = useState({
       name: "", 
       slug: "", 
@@ -91,4 +91,4 @@ const productEntry = () => {
   )
 }
 
-export default productEntry
+export default ProductEntry

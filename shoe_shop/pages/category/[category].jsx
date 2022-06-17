@@ -18,7 +18,7 @@ const shoeTypeQuery = async (e, setProductsState, setTypeStates, category) => {
   return
 }
 
-const category = ({products, category}) => {
+const Category = ({products, category}) => {
   //console.log("this is the data from the db", products)
   const [pState, setPState] = useState(products)
   const [typeState, setTypeState] = useState("")
@@ -78,4 +78,4 @@ export const getServerSideProps = async ({params: {category}}) => {
   return {props: {products, category}}
 }
 
-export default category
+export default Category

@@ -9,7 +9,7 @@ import { useStateContext } from "../../context/stateContext"
 
 
 
-const productInfo = ({product}) => {
+const ProductInfo = ({product}) => {
   console.log("this is the base url", BASE_URL)
   
   const {cartItems, setCartItems, addCartItem} = useStateContext()
@@ -78,4 +78,4 @@ export const getServerSideProps = async ({params: {slug}}) => {
   return {props: {product}}
 }
 
-export default productInfo
+export default ProductInfo

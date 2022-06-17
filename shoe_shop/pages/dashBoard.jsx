@@ -6,7 +6,7 @@ import DashboardEntry from '../components/DashboardEntry'
 
 
 
-const dashBoard = ({products}) => {
+const DashBoard = ({products}) => {
   console.log(products)
   const [productsState, setProducts] = useState(products)
   
@@ -61,4 +61,4 @@ export const getServerSideProps = async () => {
     return {props: {products}}
 }
 
-export default dashBoard
+export default DashBoard
