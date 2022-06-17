@@ -1,5 +1,6 @@
 import Banner from "../components/Banner"
 import Products from "../components/Products"
+import { BASE_URL } from "../constants"
 
 
 
@@ -18,6 +19,6 @@ export default function Home({products}) {
 }
 
 export const getServerSideProps = async() => {
-  const products = await (await fetch('http://localhost:5050/products')).json()
+  const products = await (await fetch(`${BASE_URL}`)).json()
   return {props: {products}}
 }
