@@ -1,5 +1,6 @@
 import {useState} from 'react'
 import Link from "next/link"
+import {BASE_URL} from "../constants.js"
 import {GrAddCircle} from "react-icons/gr"
 import DashboardEntry from '../components/DashboardEntry'
 
@@ -12,7 +13,7 @@ const dashBoard = ({products}) => {
   // delete Database entry 
   const deleteEntry = async (id) => {
         await fetch(
-            `http://localhost:5050/products/${id}`, 
+            `${BASE_URL}/${id}`, 
             {method: "delete"}
             ).then(response => {
                 if (response.status === 200) {
@@ -56,7 +57,7 @@ const dashBoard = ({products}) => {
 }
 
 export const getServerSideProps = async () => {
-    const products =  await ( await fetch("http://localhost:5050/products")).json()
+    const products =  await ( await fetch(`${BASE_URL}`)).json()
     return {props: {products}}
 }
 

@@ -2,6 +2,7 @@ const DEFAULT_IMAGE_LINK = "https://i.imgur.com/Cn7Wtcx.png"
 
 import Options from "../../components/Options"
 import capitalize from "../../helper_files"
+import {BASE_URL} from "../../constants.js"
 import {AiFillMinusCircle, AiFillPlusCircle} from "react-icons/ai"
 import {useState} from "react"
 import { useStateContext } from "../../context/stateContext"
@@ -9,6 +10,8 @@ import { useStateContext } from "../../context/stateContext"
 
 
 const productInfo = ({product}) => {
+  console.log("this is the base url", BASE_URL)
+  
   const {cartItems, setCartItems, addCartItem} = useStateContext()
   console.log(cartItems)
   
@@ -33,7 +36,6 @@ const productInfo = ({product}) => {
 
   return (
     <div className="product-container">
-      CART ITEMS ARE {cartItems.length}
       <div className="product-info-container">
         <div className="product-info-images">
           <img src={productImages[index] !== "" ? productImages[index]:DEFAULT_IMAGE_LINK} alt="" className="product-image" onError={(e) => e.target.src=DEFAULT_IMAGE_LINK}/>
@@ -71,7 +73,8 @@ const productInfo = ({product}) => {
 }
 
 export const getServerSideProps = async ({params: {slug}}) => {
-  const product = await (await fetch(`http://localhost:5050/products/${slug}`)).json()
+  
+  const product = await (await fetch(`${BASE_URL}/${slug}`)).json()
   return {props: {product}}
 }
 

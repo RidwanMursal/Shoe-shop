@@ -1,5 +1,6 @@
 import Input from "../../components/Input"
 import Link from "next/link"
+import {BASE_URL} from "../../constants.js"
 import { useState } from 'react';
 
 // define helper functions 
@@ -27,7 +28,7 @@ const checkInput = async (input) => {
         }
         console.log("data is", data)
         await fetch(
-            "http://localhost:5050/products", 
+            `${BASE_URL}`, 
             {
                 method: "post", 
                 //mode: "cors",

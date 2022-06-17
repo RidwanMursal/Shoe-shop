@@ -23,10 +23,13 @@ const Navbar = () => {
                 </div>
             </div>
 
-            <div className="navbar-right" onClick={() => {setMenuClosed(!menuClosed);}}>
-                <AiOutlineShoppingCart size={30} className="cart" onClick={() => setCartClosed(!cartClosed)}/>
+            <div className="navbar-right" >
+                <div>
+                    <div className="cart-count-container"><p>{cartItems.length}</p></div>
+                    <AiOutlineShoppingCart size={30} className="cart" onClick={() => setCartClosed(!cartClosed)}/>
+                </div>
                 <CgProfile size={30} /> 
-                <div className="hamburger-icon-contianer">
+                <div className="hamburger-icon-contianer" onClick={() => {setMenuClosed(!menuClosed);}}>
                     {menuClosed? <AiOutlineMenu size={29}/>:<AiOutlineClose size={29}/> }
                 </div>
             </div>

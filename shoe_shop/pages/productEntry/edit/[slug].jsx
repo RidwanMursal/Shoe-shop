@@ -1,5 +1,6 @@
 import Input from "../../../components/Input"
 import Link from "next/link"
+import {BASE_URL} from "../../../constants.js"
 import { useState } from 'react';
 
 // define helper functions 
@@ -27,7 +28,7 @@ const checkInput = async (input, id) => {
         }
         console.log("data is", data)
         await fetch(
-            `http://localhost:5050/products/${id}`, 
+            `${BASE_URL}/${id}`, 
             {
                 method: "PATCH", 
                 mode: "cors",
@@ -96,7 +97,7 @@ const Edit = ({slug, product}) => {
 }
 
 export const getServerSideProps = async ({params: {slug}}) => {
-    const product = await (await fetch(`http://localhost:5050/products/${slug}`)).json()
+    const product = await (await fetch(`${BASE_URL}/${slug}`)).json()
     return {props: {product, slug}}
 
 

@@ -1,5 +1,6 @@
 import Products from "../../components/Products"
 import capitalize from "../../helper_files"
+import {BASE_URL} from "../../constants.js"
 import { useState, useEffect } from "react"
 import {BsCheckAll} from "react-icons/bs"
 import {GiRunningShoe, GiConverseShoe, GiBasketballBall} from "react-icons/gi"
@@ -11,7 +12,7 @@ const shoeTypeQuery = async (e, setProductsState, setTypeStates, category) => {
   if (typeParam !== "all") {
     selection = `&&type=${typeParam}`
   }
-  const response =  await (await fetch(`http://localhost:5050/products?category=${category}${selection}`)).json()
+  const response =  await (await fetch(`${BASE_URL}?category=${category}${selection}`)).json()
   setProductsState(response)
   setTypeStates(typeParam === "all" ? "" : typeParam)
   return
@@ -73,7 +74,7 @@ const category = ({products, category}) => {
 // }
 
 export const getServerSideProps = async ({params: {category}}) => {
-  const products = await (await fetch(`http:localhost:5050/products?category=${category}`)).json()
+  const products = await (await fetch(`${BASE_URL}?category=${category}`)).json()
   return {props: {products, category}}
 }
 
