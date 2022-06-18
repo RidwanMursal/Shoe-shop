@@ -1,4 +1,6 @@
-import react, {useState, useContext, useEffect, createContext} from "react"
+import {useState, useContext, createContext} from "react"
+import { toast } from "react-toastify"
+
 
 // helper functions 
 const updateQuantity = (cartItems, quantity, index) => {
@@ -19,15 +21,24 @@ const addCartItem = (cartItems, setCartItems, cartEntry) => {
     console.log("this is the index", index)
     if (index !== -1) {
         const dummyObj = updateQuantity(cartItems, quantity, index) 
-        setCartItems(dummyObj)
         console.log(cartItems)
     }
-    else setCartItems([...cartItems, cartEntry])
+    else {
+        setCartItems([...cartItems, cartEntry])
+    }
     return;
 }
 
 const deleteCartItem = (cartItems, setCartItems, item) => {
     setCartItems( cartItems.filter(cItem => cItem !== item) )
+    toast.success("Product deleted", {
+        position: "top-right",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        
+    })
     return; 
 }
 

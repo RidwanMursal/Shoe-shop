@@ -1,6 +1,7 @@
 const DEFAULT_IMAGE_LINK = "https://i.imgur.com/Cn7Wtcx.png"
 
 import Options from "../../components/Options"
+import { toast } from "react-toastify"
 import capitalize from "../../helper_files"
 import {BASE_URL} from "../../constants.js"
 import {AiFillMinusCircle, AiFillPlusCircle} from "react-icons/ai"
@@ -32,10 +33,21 @@ const ProductInfo = ({product}) => {
       quantity,
     }  
     addCartItem(cartItems, setCartItems, cartEntry)
-  } 
+    toast.success(`Item Added To Cart`, {
+      position:"top-center",
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false, 
+    })
+  }
+  
+  
 
   return (
+   
     <div className="product-container">
+       
       <div className="product-info-container">
         <div className="product-info-images">
           <img src={productImages[index] !== "" ? productImages[index]:DEFAULT_IMAGE_LINK} alt="" className="product-image" onError={(e) => e.target.src=DEFAULT_IMAGE_LINK}/>
@@ -55,7 +67,9 @@ const ProductInfo = ({product}) => {
               <div className="qty-and-size-container">
                 <div className="qty-picker">
                   <button className="picker-button" onClick={() => decrementQty()}><AiFillMinusCircle /></button>
+                  <div className="break-line"></div>
                   <p className="qty">{quantity}</p>
+                  <div className="break-line"></div>
                   <button className="picker-button" onClick={() => setQuantity(quantity + 1)}><AiFillPlusCircle/></button>
                 </div>
                 
