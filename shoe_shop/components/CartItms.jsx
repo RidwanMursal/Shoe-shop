@@ -6,7 +6,7 @@ const CartItms = () => {
   console.log(cartItems)
   return (
     <div className="cart-items-container">
-      {cartItems.map(item => <CartItem key={item.product.productSlug} item={item}/>)}
+      {cartItems.map(item => <CartItem key={item.product._id} item={item}/>)}
     </div>
   )
 }

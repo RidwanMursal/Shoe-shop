@@ -40,7 +40,7 @@ const ProductInfo = ({product}) => {
         <div className="product-info-images">
           <img src={productImages[index] !== "" ? productImages[index]:DEFAULT_IMAGE_LINK} alt="" className="product-image" onError={(e) => e.target.src=DEFAULT_IMAGE_LINK}/>
           <div className="other-images-container">
-            {productImages?.map((image, i) => <img src={image} className={i === index? "preview-image selected": "preview-image"} onClick={(e) =>  setIndex(i)} />)}
+            {productImages?.map((image, i) => <img src={image} key={i} className={i === index? "preview-image selected": "preview-image"} onClick={(e) =>  setIndex(i)} />)}
           </div>
         </div>
 
