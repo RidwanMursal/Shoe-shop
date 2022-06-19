@@ -22,6 +22,7 @@ const addCartItem = (cartItems, setCartItems, cartEntry) => {
     if (index !== -1) {
         const dummyObj = updateQuantity(cartItems, quantity, index) 
         console.log(cartItems)
+        setCartItems(dummyObj)
     }
     else {
         setCartItems([...cartItems, cartEntry])

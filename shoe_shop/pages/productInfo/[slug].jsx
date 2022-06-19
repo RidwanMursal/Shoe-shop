@@ -41,6 +41,17 @@ const ProductInfo = ({product}) => {
       pauseOnHover: false, 
     })
   }
+
+  // carousel functions 
+  const toggleCarousel = (e) => {
+    console.log(e.target.className)
+    if (e.target.className === "next") {
+      console.log("this is the index", index)
+      setIndex(index + 1 < productImages.length? index+1:0)
+    } else {
+      setIndex(index-1 >= 0? index-1 : productImages.length-1)
+    }
+  }
   
   
 
@@ -50,7 +61,12 @@ const ProductInfo = ({product}) => {
        
       <div className="product-info-container">
         <div className="product-info-images">
-          <img src={productImages[index] !== "" ? productImages[index]:DEFAULT_IMAGE_LINK} alt="" className="product-image" onError={(e) => e.target.src=DEFAULT_IMAGE_LINK}/>
+          <div className="carousel">
+            <button className="prev" onClick={(e) => toggleCarousel(e)}>&#8656;</button>
+            <button className="next" onClick={(e) => toggleCarousel(e)}>&#8658;</button>
+            {productImages?.map((image, i) => <img src={image} key={i} className={i === index? "product-image": "height-hidden"} onClick={(e) =>  setIndex(i)} />)}
+          </div>
+          <img id="product-image" src={productImages[index] !== "" ? productImages[index]:DEFAULT_IMAGE_LINK} alt="" className="product-image" onError={(e) => e.target.src=DEFAULT_IMAGE_LINK}/>
           <div className="other-images-container">
             {productImages?.map((image, i) => <img src={image} key={i} className={i === index? "preview-image selected": "preview-image"} onClick={(e) =>  setIndex(i)} />)}
           </div>

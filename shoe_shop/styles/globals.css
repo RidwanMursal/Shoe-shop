@@ -325,6 +325,10 @@ span{color: red}
   background-color:rgb(173, 93, 93);
 }
 
+.carousel {
+  display: none; 
+}
+
 .other-images-container {
   /* display: flex; 
   flex-wrap: wrap;
@@ -438,6 +442,8 @@ span{color: red}
     height: 300px;
   }
 
+  
+
   .preview-image {width:70px; height:70px}
   
 
@@ -454,13 +460,55 @@ span{color: red}
     margin-top: 0;
   }
 
+  .height-hidden {
+    height: 0px;
+  }
+
+  .carousel {
+    display: block;
+    height: 300px;
+  }
+
+  #product-image{display: none;}
+
+  .product-image {
+    width: 300px;
+    height: 300px; 
+    object-fit: cover;
+    margin: 0px auto;
+
+    transition: 700ms height ;
+  }
+  
   .other-images-container {display:none}
+
+  
 
   .product-info-images {
     background-color: black;
     display: flex; 
     justify-content: center;
+
+    position: relative;
   }
+
+  .prev, .next {
+    position: absolute;
+    top: 50%;
+
+    background: none; 
+    border: none;
+    cursor: pointer; 
+    padding: 0rem;
+    
+    color: white;
+    font-size: 1.5rem;
+  }
+  .prev:hover, .next:hover{
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  .prev{left:0} .next{right:0}
 } 
 
 /* Styles related to database dashboard */
