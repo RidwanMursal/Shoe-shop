@@ -42,7 +42,7 @@ const Navbar = () => {
             <Link href="/category/kids"><p className="navbar-text">Kids</p></Link>
         </div>
 
-        <div className={cartClosed? "hidden":"cart-container"} >
+        <div className={cartClosed? "width-hidden":"cart-container"} >
             <div>
                 <CartHeader setCartClosed={setCartClosed} cartLength={cartItems.length}/> 
                 <CartItms />
