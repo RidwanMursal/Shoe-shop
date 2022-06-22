@@ -62,8 +62,8 @@ const ProductInfo = ({product}) => {
       <div className="product-info-container">
         <div className="product-info-images">
           <div className="carousel">
-            <button className="prev" onClick={(e) => toggleCarousel(e)}>&#8656;</button>
-            <button className="next" onClick={(e) => toggleCarousel(e)}>&#8658;</button>
+            <button className="prev" onClick={(e) => toggleCarousel(e, index, setIndex, productImages)}>&#8656;</button>
+            <button className="next" onClick={(e) => toggleCarousel(e, index, setIndex, productImages)}>&#8658;</button>
             {productImages?.map((image, i) => <img src={image} key={i} className={i === index? "product-image": "height-hidden"} onClick={(e) =>  setIndex(i)} />)}
           </div>
           <img id="product-image" src={productImages[index] !== "" ? productImages[index]:DEFAULT_IMAGE_LINK} alt="" className="product-image" onError={(e) => e.target.src=DEFAULT_IMAGE_LINK}/>

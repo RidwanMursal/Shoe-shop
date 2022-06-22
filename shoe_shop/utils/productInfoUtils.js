@@ -17,7 +17,7 @@ const addToCart = (product, size, quantity, addCartItem, cartItems, setCartItems
   }
 
 // carousel function 
-const toggleCarousel = (e) => {
+const toggleCarousel = (e, index, setIndex, productImages) => {
     console.log(e.target.className)
     if (e.target.className === "next") {
         console.log("this is the index", index)
