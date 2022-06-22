@@ -3,7 +3,7 @@ import Link from "next/link"
 import {BASE_URL} from "../../constants.js"
 import {GrAddCircle} from "react-icons/gr"
 import { deleteEntry } from './dashBoardUtils.js'
-import DashboardEntry from '../../components/DashBoardEntry/DashBoardEntry'
+import DashBoardEntry from '../../components/DashBoardEntry/DashBoardEntry'
 
 
 
@@ -48,7 +48,7 @@ const DashBoard = ({products}) => {
                     </Link>
                 </div>
                 <div className="database-entries-body">
-                    {productsState?.map(entry => <DashboardEntry key={entry._id} entry={entry} products={productsState} setProducts={setProducts} onDelete={deleteEntry} /> )}
+                    {productsState?.map(entry => <DashBoardEntry key={entry._id} entry={entry} products={productsState} setProducts={setProducts} onDelete={deleteEntry} /> )}
                 </div>
             </div>
         </section>
