@@ -1,6 +1,6 @@
-import shoeImageTopView from "../images/air-force-ones.png"
-import shoeImageProfile from "../images/air-force-ones-profile.png"
-import mobileBanner from "../images/nike.jpg"
+import shoeImageTopView from "../../images/air-force-ones.png"
+import shoeImageProfile from "../../images/air-force-ones-profile.png"
+import mobileBanner from "../../images/nike.jpg"
 import Link from "next/link"
 
 

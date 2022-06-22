@@ -1,10 +1,8 @@
 import React from 'react'
 import Link from "next/link"
 
-
-
-const DashboardEntry = ({entry, onDelete}) => {
-  console.log(console.slug)
+const DashboardEntry = ({entry, onDelete, products, setProducts}) => {
+  //console.log(console.slug)
   return (
     
     <div className="database-entry">
@@ -13,7 +11,7 @@ const DashboardEntry = ({entry, onDelete}) => {
             <Link href={`/productEntry/edit/${entry.productSlug}`}>
                 <button className="database-entry-edit-btn">Edit</button>
             </Link> 
-            <button className="database-entry-edit-btn" onClick={() => onDelete(entry._id)}>Delete</button>
+            <button className="database-entry-edit-btn" onClick={() => onDelete(entry._id, products, setProducts)}>Delete</button>
         </div>
     </div>
     

@@ -1,12 +1,12 @@
-import Banner from "../components/Banner"
-import Products from "../components/Products"
+import Banner from "../components/Banner/Banner"
+import Products from "../components/Products/Products"
 import { BASE_URL } from "../constants"
 
 
 
 
 export default function Home({products}) {
-  console.log(products)
+  //console.log(products)
 
   return (
     <div className="main-container">

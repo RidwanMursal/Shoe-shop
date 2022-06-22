@@ -1,6 +1,6 @@
 import Link from "next/link"
 const DEFAULT_IMAGE_LINK = "https://i.imgur.com/Cn7Wtcx.png"
-import capitalize from "../helper_files"
+import capitalize from "../../helper_files"
 
 
 const Product = ({product}) => {

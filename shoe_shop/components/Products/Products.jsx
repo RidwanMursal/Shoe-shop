@@ -1,7 +1,6 @@
-import Product from "./Product"
+import Product from "../Product/Product"
 const Products = ({products}) => {
   
-
   if (products.length === 0) {
     return (
       <div className="nothing-found-container">

@@ -1,10 +1,10 @@
 import {AiFillCloseCircle} from "react-icons/ai"
-import { useStateContext } from "../context/stateContext"
+import { useStateContext } from "../../context/stateContext"
 
 const CartItem = ({item}) => {
   const {cartItems, setCartItems, deleteCartItem} = useStateContext()
-  console.log(cartItems, setCartItems, deleteCartItem)
-  console.log(item)
+  //console.log(cartItems, setCartItems, deleteCartItem)
+  //console.log(item)
   const {productImages, productPrice, productName} = item.product 
   const {size} = item; const {quantity} = item
   return (

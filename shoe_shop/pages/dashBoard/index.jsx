@@ -1,8 +1,9 @@
 import {useState} from 'react'
 import Link from "next/link"
-import {BASE_URL} from "../constants.js"
+import {BASE_URL} from "../../constants.js"
 import {GrAddCircle} from "react-icons/gr"
-import DashboardEntry from '../components/DashboardEntry'
+import { deleteEntry } from './dashBoardUtils.js'
+import DashboardEntry from '../../components/DashboardEntry/DashboardEntry'
 
 
 
@@ -10,17 +11,17 @@ const DashBoard = ({products}) => {
   console.log(products)
   const [productsState, setProducts] = useState(products)
   
-  // delete Database entry 
-  const deleteEntry = async (id) => {
-        await fetch(
-            `${BASE_URL}/${id}`, 
-            {method: "delete"}
-            ).then(response => {
-                if (response.status === 200) {
-                    setProducts(productsState.filter(product => product._id !== id))
-                }
-            })
-    }
+//   // delete Database entry 
+//   const deleteEntry = async (id) => {
+//         await fetch(
+//             `${BASE_URL}/${id}`, 
+//             {method: "delete"}
+//             ).then(response => {
+//                 if (response.status === 200) {
+//                     setProducts(productsState.filter(product => product._id !== id))
+//                 }
+//             })
+//     }
   return (
     <div>
         <div className="dashboard-title-container">
@@ -47,7 +48,7 @@ const DashBoard = ({products}) => {
                     </Link>
                 </div>
                 <div className="database-entries-body">
-                    {productsState?.map(entry => <DashboardEntry key={entry._id} entry={entry} onDelete={deleteEntry} /> )}
+                    {productsState?.map(entry => <DashboardEntry key={entry._id} entry={entry} products={productsState} setProducts={setProducts} onDelete={deleteEntry} /> )}
                 </div>
             </div>
         </section>

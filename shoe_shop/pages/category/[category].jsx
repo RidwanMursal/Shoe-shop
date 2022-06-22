@@ -1,22 +1,22 @@
-import Products from "../../components/Products"
+import Products from "../../components/Products/Products"
 import capitalize from "../../helper_files"
 import {BASE_URL} from "../../constants.js"
+import { shoeTypeQuery } from "./categoryUtils"
 import { useState, useEffect } from "react"
 import {BsCheckAll} from "react-icons/bs"
 import {GiRunningShoe, GiConverseShoe, GiBasketballBall} from "react-icons/gi"
 
-
-const shoeTypeQuery = async (e, setProductsState, setTypeStates, category) => {
-  const typeParam = e.target.dataset.shoetype
-  let selection = ""
-  if (typeParam !== "all") {
-    selection = `&&type=${typeParam}`
-  }
-  const response =  await (await fetch(`${BASE_URL}?category=${category}${selection}`)).json()
-  setProductsState(response)
-  setTypeStates(typeParam === "all" ? "" : typeParam)
-  return
-}
+// const shoeTypeQuery = async (e, setProductsState, setTypeStates, category) => {
+//   const typeParam = e.target.dataset.shoetype
+//   let selection = ""
+//   if (typeParam !== "all") {
+//     selection = `&&type=${typeParam}`
+//   }
+//   const response =  await (await fetch(`${BASE_URL}?category=${category}${selection}`)).json()
+//   setProductsState(response)
+//   setTypeStates(typeParam === "all" ? "" : typeParam)
+//   return
+// }
 
 const Category = ({products, category}) => {
   //console.log("this is the data from the db", products)
@@ -52,26 +52,6 @@ const Category = ({products, category}) => {
   )
 
 }
-
-// export const getStaticPaths = async () => {
-//   // const products = await (await fetch(`http:localhost:5050/products?category=${category}`)).json()
-
-//   // const paths = products.map((product) => ({
-//   //     params: {
-//   //         slug: product.slug.current
-//   //     }
-//   // }))
-
-//   return {
-//       paths: [{params: {category: "mens"}}, {params: {category: "womens"}}, {params: {category: "kids"}}], 
-//       fallback: "blocking"
-//   }
-// }
-
-// export const getStaticProps = async ({params: {category}}) => {
-//     const products = await (await fetch(`http:localhost:5050/products?category=${category}`)).json()
-//     return {props: {products, category}}
-// }
 
 export const getServerSideProps = async ({params: {category}}) => {
   const products = await (await fetch(`${BASE_URL}?category=${category}`)).json()

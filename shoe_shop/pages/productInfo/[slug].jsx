@@ -1,7 +1,7 @@
 const DEFAULT_IMAGE_LINK = "https://i.imgur.com/Cn7Wtcx.png"
 
-import Options from "../../components/Options"
-import { toast } from "react-toastify"
+import Options from "../../components/Options/Options"
+import { addToCart, toggleCarousel } from "./productInfoUtils"
 import capitalize from "../../helper_files"
 import {BASE_URL} from "../../constants.js"
 import {AiFillMinusCircle, AiFillPlusCircle} from "react-icons/ai"
@@ -11,10 +11,10 @@ import { useStateContext } from "../../context/stateContext"
 
 
 const ProductInfo = ({product}) => {
-  console.log("this is the base url", BASE_URL)
+  //console.log("this is the base url", BASE_URL)
   
   const {cartItems, setCartItems, addCartItem} = useStateContext()
-  console.log(cartItems)
+  //console.log(cartItems)
   
   // console.log(product)
   let sizes = []; for (let i = 3; i < 16; i++) sizes.push(i)
@@ -26,32 +26,32 @@ const ProductInfo = ({product}) => {
   //console.log("index is:", index)
   //console.log(productImages)
   // add to cart function 
-  const addToCart = (product, size, quantity) => {
-    const cartEntry = {
-      product, 
-      size, 
-      quantity,
-    }  
-    addCartItem(cartItems, setCartItems, cartEntry)
-    toast.success(`Item Added To Cart`, {
-      position:"top-center",
-      autoClose: 1000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: false, 
-    })
-  }
+  // const addToCart = (product, size, quantity) => {
+  //   const cartEntry = {
+  //     product, 
+  //     size, 
+  //     quantity,
+  //   }  
+  //   addCartItem(cartItems, setCartItems, cartEntry)
+  //   toast.success(`Item Added To Cart`, {
+  //     position:"top-center",
+  //     autoClose: 1000,
+  //     hideProgressBar: false,
+  //     closeOnClick: true,
+  //     pauseOnHover: false, 
+  //   })
+  // }
 
-  // carousel functions 
-  const toggleCarousel = (e) => {
-    console.log(e.target.className)
-    if (e.target.className === "next") {
-      console.log("this is the index", index)
-      setIndex(index + 1 < productImages.length? index+1:0)
-    } else {
-      setIndex(index-1 >= 0? index-1 : productImages.length-1)
-    }
-  }
+  // // carousel functions 
+  // const toggleCarousel = (e) => {
+  //   console.log(e.target.className)
+  //   if (e.target.className === "next") {
+  //     console.log("this is the index", index)
+  //     setIndex(index + 1 < productImages.length? index+1:0)
+  //   } else {
+  //     setIndex(index-1 >= 0? index-1 : productImages.length-1)
+  //   }
+  // }
   
   
 
@@ -94,7 +94,7 @@ const ProductInfo = ({product}) => {
                 </select>
               </div>
 
-              <button className="add-to-cart-btn" onClick={() => addToCart(product, size, quantity)}>Add to Cart</button>
+              <button className="add-to-cart-btn" onClick={() => addToCart(product, size, quantity, addCartItem, cartItems, setCartItems)}>Add to Cart</button>
             </div>
         </div>
       </div>

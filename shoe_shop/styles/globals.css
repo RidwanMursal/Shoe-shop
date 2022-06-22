@@ -389,6 +389,9 @@ span{color: red}
 
 .product-blurb {
   margin: 1rem 0px; 
+  color:rgb(100, 100, 100);
+  font-size: 0.95rem;
+  /* opacity: 70%; */
 }
 
 .product-price {

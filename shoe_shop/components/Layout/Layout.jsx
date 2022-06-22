@@ -1,6 +1,6 @@
-import Header from "./Header"
-import Navbar from "./Navbar"
-import Footer from "./Footer"
+import Header from "../Header/Header"
+import Navbar from "../Navbar/Navbar"
+import Footer from "../Footer/Footer"
 
 const Layout = ({children}) => {
   return (
