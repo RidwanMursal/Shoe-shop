@@ -1,7 +1,7 @@
 import Products from "../../components/Products/Products"
 import capitalize from "../../helper_files"
 import {BASE_URL} from "../../constants.js"
-import { shoeTypeQuery } from "./categoryUtils"
+import shoeTypeQuery  from "../../utils/categoryUtils"
 import { useState, useEffect } from "react"
 import {BsCheckAll} from "react-icons/bs"
 import {GiRunningShoe, GiConverseShoe, GiBasketballBall} from "react-icons/gi"

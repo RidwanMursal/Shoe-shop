@@ -2,7 +2,7 @@ import {useState} from 'react'
 import Link from "next/link"
 import {BASE_URL} from "../../constants.js"
 import {GrAddCircle} from "react-icons/gr"
-import { deleteEntry } from "./dashBoardUtils.js"
+import deleteEntry from "../../utils/dashBoardUtils.js"
 import DashBoardEntry from "../../components/DashBoardEntry/DashBoardEntry"
 
 

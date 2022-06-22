@@ -1,4 +1,4 @@
-import { BASE_URL } from "../../constants"
+import { BASE_URL } from "../constants"
 
 const shoeTypeQuery = async (e, setProductsState, setTypeStates, category) => {
     const typeParam = e.target.dataset.shoetype
@@ -11,4 +11,4 @@ const shoeTypeQuery = async (e, setProductsState, setTypeStates, category) => {
     setTypeStates(typeParam === "all" ? "" : typeParam)
 }
 
-export {shoeTypeQuery}
+export default shoeTypeQuery

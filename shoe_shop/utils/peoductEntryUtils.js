@@ -1,4 +1,4 @@
-import { BASE_URL } from "../../constants";
+import { BASE_URL } from "../constants";
 
 // define helper functions 
 const checkInput = async (input, id) => {
@@ -44,4 +44,4 @@ const checkInput = async (input, id) => {
     }  
 }
 
-export {checkInput}
+export default checkInput

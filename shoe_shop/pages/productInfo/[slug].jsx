@@ -1,7 +1,7 @@
 const DEFAULT_IMAGE_LINK = "https://i.imgur.com/Cn7Wtcx.png"
 
 import Options from "../../components/Options/Options"
-import { addToCart, toggleCarousel } from "./productInfoUtils"
+import { addToCart, toggleCarousel } from "../../utils/productInfoUtils"
 import capitalize from "../../helper_files"
 import {BASE_URL} from "../../constants.js"
 import {AiFillMinusCircle, AiFillPlusCircle} from "react-icons/ai"

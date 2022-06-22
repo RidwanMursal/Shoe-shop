@@ -1,4 +1,4 @@
-import { BASE_URL } from "../../constants"
+import { BASE_URL } from "../constants"
 // delete Database entry 
 const deleteEntry = async (id, productsState, setProducts) => {
     await fetch(
@@ -11,4 +11,4 @@ const deleteEntry = async (id, productsState, setProducts) => {
         })
 }
 
-export {deleteEntry}
+export default deleteEntry
