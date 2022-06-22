@@ -3,7 +3,7 @@ import Link from "next/link"
 import {BASE_URL} from "../../constants.js"
 import {GrAddCircle} from "react-icons/gr"
 import { deleteEntry } from './dashBoardUtils.js'
-import DashboardEntry from '../../components/DashboardEntry/DashboardEntry'
+import DashboardEntry from '../../components/DashBoardEntry/DashBoardEntry'
 
 
 
