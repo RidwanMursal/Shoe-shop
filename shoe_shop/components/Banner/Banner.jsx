@@ -21,7 +21,7 @@ const Banner = () => {
 
             <div>
               <h2 className="banner-item-price">$79.99</h2>
-              <Link href="/productInfo/nike-af1-new">
+              <Link href="/productInfo/jordans-af1">
                 <button className="banner-shop-button">Shop Now</button>
               </Link>
             </div>

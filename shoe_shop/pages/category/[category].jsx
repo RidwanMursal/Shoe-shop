@@ -6,17 +6,7 @@ import { useState, useEffect } from "react"
 import {BsCheckAll} from "react-icons/bs"
 import {GiRunningShoe, GiConverseShoe, GiBasketballBall} from "react-icons/gi"
 
-// const shoeTypeQuery = async (e, setProductsState, setTypeStates, category) => {
-//   const typeParam = e.target.dataset.shoetype
-//   let selection = ""
-//   if (typeParam !== "all") {
-//     selection = `&&type=${typeParam}`
-//   }
-//   const response =  await (await fetch(`${BASE_URL}?category=${category}${selection}`)).json()
-//   setProductsState(response)
-//   setTypeStates(typeParam === "all" ? "" : typeParam)
-//   return
-// }
+
 
 const Category = ({products, category}) => {
   //console.log("this is the data from the db", products)

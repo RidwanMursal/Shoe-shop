@@ -18,7 +18,7 @@ const checkInput = async (input, id) => {
     // else add data to data base 
     else {
         const data = {
-            name: input.name.toLowerCase(), 
+            name: input.name, 
             type: input.type.toLowerCase(), 
             details: input.details, 
             price : input.price,

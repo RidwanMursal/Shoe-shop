@@ -11,17 +11,6 @@ const DashBoard = ({products}) => {
   console.log(products)
   const [productsState, setProducts] = useState(products)
   
-//   // delete Database entry 
-//   const deleteEntry = async (id) => {
-//         await fetch(
-//             `${BASE_URL}/${id}`, 
-//             {method: "delete"}
-//             ).then(response => {
-//                 if (response.status === 200) {
-//                     setProducts(productsState.filter(product => product._id !== id))
-//                 }
-//             })
-//     }
   return (
     <div>
         <div className="dashboard-title-container">

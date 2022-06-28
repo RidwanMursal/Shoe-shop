@@ -23,35 +23,6 @@ const ProductInfo = ({product}) => {
   const [quantity, setQuantity] = useState(1)
   const decrementQty = () => {if(quantity > 1) setQuantity(quantity-1);}
   const {productImages, productPrice, productDetails, productBrand, productName} = product
-  //console.log("index is:", index)
-  //console.log(productImages)
-  // add to cart function 
-  // const addToCart = (product, size, quantity) => {
-  //   const cartEntry = {
-  //     product, 
-  //     size, 
-  //     quantity,
-  //   }  
-  //   addCartItem(cartItems, setCartItems, cartEntry)
-  //   toast.success(`Item Added To Cart`, {
-  //     position:"top-center",
-  //     autoClose: 1000,
-  //     hideProgressBar: false,
-  //     closeOnClick: true,
-  //     pauseOnHover: false, 
-  //   })
-  // }
-
-  // // carousel functions 
-  // const toggleCarousel = (e) => {
-  //   console.log(e.target.className)
-  //   if (e.target.className === "next") {
-  //     console.log("this is the index", index)
-  //     setIndex(index + 1 < productImages.length? index+1:0)
-  //   } else {
-  //     setIndex(index-1 >= 0? index-1 : productImages.length-1)
-  //   }
-  // }
   
   
 
