@@ -43,9 +43,30 @@ const Category = ({products, category}) => {
 
 }
 
-export const getServerSideProps = async ({params: {category}}) => {
+export const getStaticPaths = async () => {
+
+  const categories  = ["mens, womens, kids"]
+
+  const paths = categories.map((category) => ({
+      params: {
+          category: category
+      }
+  }))
+
+  return {
+      paths, 
+      fallback: "blocking"
+  }
+}
+
+export const getStaticProps = async ({params: {category}}) => {
   const products = await (await fetch(`${BASE_URL}?category=${category}`)).json()
   return {props: {products, category}}
 }
+
+// export const getServerSideProps = async ({params: {category}}) => {
+//   const products = await (await fetch(`${BASE_URL}?category=${category}`)).json()
+//   return {props: {products, category}}
+// }
 
 export default Category
