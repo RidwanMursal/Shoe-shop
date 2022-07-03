@@ -73,10 +73,32 @@ const ProductInfo = ({product}) => {
   )
 }
 
-export const getServerSideProps = async ({params: {slug}}) => {
   
+export const getStaticPaths = async () => {
+
+  const products = await (await fetch(`${BASE_URL}`)).json()
+
+  const paths = products.map((product) => ({
+      params: {
+          slug: product.productSlug
+      }
+  }))
+
+  return {
+      paths, 
+      fallback: "blocking"
+  }
+}
+
+export const getStaticProps = async( {params: {slug}} ) => {
   const product = await (await fetch(`${BASE_URL}/${slug}`)).json()
   return {props: {product}}
 }
+
+// export const getServerSideProps = async ({params: {slug}}) => {
+  
+//   const product = await (await fetch(`${BASE_URL}/${slug}`)).json()
+//   return {props: {product}}
+// }
 
 export default ProductInfo
